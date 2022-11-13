@@ -1,0 +1,1 @@
+export { default as StartGame } from './startGame/StartGame';
