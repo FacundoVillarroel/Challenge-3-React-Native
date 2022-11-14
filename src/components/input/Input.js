@@ -1,12 +1,10 @@
-import { View, Text } from 'react-native';
+import { TextInput} from 'react-native';
 import React from 'react';
 import { styles } from './styles';
 
-const Input = () => {
+const Input = ({style, ...props}) => {
   return (
-    <View>
-      <Text>Input</Text>
-    </View>
+    <TextInput {...props} style={{ ...styles.container, ...style}} />
   )
 }
 

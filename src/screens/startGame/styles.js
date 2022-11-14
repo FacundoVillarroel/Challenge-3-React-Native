@@ -26,8 +26,6 @@ inputContainer: {
 },
 input: {
     width: '100%',
-    borderBottomColor: colors.primary,
-    borderBottomWidth: 1,
     minWidth: 70,
     fontSize: 22,
     paddingVertical: 10,
