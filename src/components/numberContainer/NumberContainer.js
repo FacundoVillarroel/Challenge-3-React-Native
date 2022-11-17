@@ -2,10 +2,10 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import { styles } from './styles';
 
-const NumberContainer = () => {
+const NumberContainer = ({ number }) => {
   return (
-    <View>
-      <Text>NumberContainer</Text>
+    <View style={styles.container}>
+      <Text style={styles.number}>{number}</Text>
     </View>
   )
 }
