@@ -1,10 +1,10 @@
-import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import { View, Text, Button, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { styles } from './styles';
 import colors from '../../constants/colors';
 import { Card, Input, NumberContainer } from "../../components/index"
 
-const StartGame = () => {
+const StartGame = ({onStartGame}) => {
   const [number, setNumber] = useState("");
   const [selectedNumber, setSelectedNumber] = useState(null);
   const [confirmed, setConfirmed ] = useState(false)
@@ -29,17 +29,13 @@ const StartGame = () => {
     }
   }
 
-  const onHandleStartGame = () => {
-
-  }
-
   const confirmedOutput = () => confirmed ? (
     <Card style={styles.confirmedContainer}>
       <Text style={styles.confirmedTitle}>Your selected number</Text>
       <NumberContainer number={selectedNumber} />
       <Button 
         title="Start Game"
-        onPress={onHandleStartGame}
+        onPress={() => onStartGame(selectedNumber)}
         color={colors.primary}
       />
     </Card>
@@ -68,7 +64,7 @@ const StartGame = () => {
           />
           <View style={styles.buttonContainer}>
             <Button
-              title="Reset"
+              title="Restart"
               onPress={onHandleReset}
               color={colors.secondary}
               />
