@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../constants/colors";
 
 export const styles = StyleSheet.create({
     container: {
@@ -14,10 +15,24 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
+        color:colors.text
     },
     containerButton: {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
+    congratsContainer:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center"
+    },
+    congratsTitle:{
+        fontSize:15,
+        color:colors.third,
+        fontFamily:"Lato-Italic"
+    },
+    resetButtonContainer:{
+        marginTop:20
+    }
 });

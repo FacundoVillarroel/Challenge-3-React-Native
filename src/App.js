@@ -20,6 +20,10 @@ export default function App() {
     setUserNumber(selectedNumber);
   }
 
+  const onResetGame =() => {
+    setUserNumber(null)
+  }
+
   const title = userNumber ? "Let's Play" : 'Welcome';
 
   let content =  <StartGame onStartGame={onStartGame} />
@@ -33,7 +37,7 @@ export default function App() {
   }
 
   if (userNumber) {
-    content = <Game selectedNumber={userNumber} />
+    content = <Game selectedNumber={userNumber} onResetGame={onResetGame} />
   }
 
 
