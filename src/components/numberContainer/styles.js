@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
   },
   number: {
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontFamily: 'Lato-Bold',
     color:colors.text
   }
 })
