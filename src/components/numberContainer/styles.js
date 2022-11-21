@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   },
   number: {
     fontSize: 20,
-    fontFamily: 'Lato-Bold',
+    fontFamily: 'JosefinSans-Bold',
     color:colors.text
   }
 })

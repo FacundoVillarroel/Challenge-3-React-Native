@@ -22,16 +22,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
-    congratsContainer:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"center"
-    },
-    congratsTitle:{
-        fontSize:15,
-        color:colors.third,
-        fontFamily:"Lato-Italic"
-    },
     resetButtonContainer:{
         marginTop:20
     }

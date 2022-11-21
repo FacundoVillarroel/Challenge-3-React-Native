@@ -9,9 +9,9 @@ import colors from './constants/colors';
 
 export default function App() {
   const [loaded] = useFonts({
-    'Lato-Regular': require('../assets/fonts/Lato-Regular.ttf'),
-    'Lato-Bold': require('../assets/fonts/Lato-Bold.ttf'),
-    'Lato-Italic': require('../assets/fonts/Lato-Italic.ttf'),
+    'JosefinSans-Regular': require('../assets/fonts/JosefinSans-Regular.ttf'),
+    'JosefinSans-Bold': require('../assets/fonts/JosefinSans-Bold.ttf'),
+    'JosefinSans-Italic': require('../assets/fonts/JosefinSans-Italic.ttf'),
   })
 
   const [userNumber, setUserNumber] = useState(null);

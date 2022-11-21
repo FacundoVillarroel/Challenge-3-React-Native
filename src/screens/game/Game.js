@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Card, NumberContainer } from '../../components';
 import colors from '../../constants/colors';
 import { styles } from './styles';
+import Congrats from '../congrats/Congrats';
 
 const generateRandomNumber = (min, max, exclude) => {
   min=Math.ceil(min);
@@ -22,17 +23,16 @@ const Game = ({selectedNumber, onResetGame}) => {
   const [min, setMin] = useState(1);
   const [max, setMax] = useState(100);
   
-
   const onLower = () => {
     attempts++
-    const newRandom = generateRandomNumber(min, currentGuess, null)
+    const newRandom = generateRandomNumber(min, currentGuess, currentGuess)
     if (newRandom < selectedNumber){ setMin(newRandom) }
     setCurrentGuess(newRandom)
   }
 
   const onGreater = () => {
     attempts++
-    const newRandom = generateRandomNumber(currentGuess, max, null)
+    const newRandom = generateRandomNumber(currentGuess, max, currentGuess)
     if (newRandom > selectedNumber) {setMax(newRandom)}
     setCurrentGuess(newRandom)
   }
@@ -43,21 +43,7 @@ const Game = ({selectedNumber, onResetGame}) => {
   }
 
   if(selectedNumber === currentGuess) {
-    return (
-      <View style={styles.congratsContainer}>
-        <Card style={styles.content}> 
-          <Text style={styles.congratsTitle}>Congratulations !!</Text>
-          <Text style={styles.congratsTitle}>You won with {attempts} attempts !</Text>
-        </Card>
-        <View style={styles.resetButtonContainer}>
-        <Button
-          title='Restart Game'
-          onPress={handleRestart}
-          color={colors.primary}
-        />
-        </View>
-      </View>
-    )
+    return <Congrats attempts={attempts} handleRestart={handleRestart} currentGuess={currentGuess}/>
   }
 
   return (
