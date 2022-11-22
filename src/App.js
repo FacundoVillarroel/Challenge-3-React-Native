@@ -1,11 +1,12 @@
 import React, { useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, ActivityIndicator } from 'react-native';
-import { Header } from "./components/index";
-import { StartGame, Game } from "./screens/index"
+import { Footer, Header } from "./components/index";
+import { StartGame, Game, Instructions } from "./screens/index"
 import { styles } from './styles';
 import { useFonts } from "expo-font"; 
 import colors from './constants/colors';
+import instructionsList from './utils/instructionsList';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -15,6 +16,7 @@ export default function App() {
   })
 
   const [userNumber, setUserNumber] = useState(null);
+  const [instructions, setInstructions] = useState(false)
 
   const onStartGame = (selectedNumber) => {
     setUserNumber(selectedNumber);
@@ -24,9 +26,14 @@ export default function App() {
     setUserNumber(null)
   }
 
+  const onInstructions = () => {
+    setInstructions(!instructions)
+  }
+
   const title = userNumber ? "Let's Play" : 'Welcome';
 
   let content =  <StartGame onStartGame={onStartGame} />
+  let footerText = "See instructions of the game"
 
   if (!loaded) {
     return (
@@ -40,11 +47,16 @@ export default function App() {
     content = <Game selectedNumber={userNumber} onResetGame={onResetGame} />
   }
 
+  if (instructions){
+    content = <Instructions instructionsList={instructionsList}/>
+    footerText='Return to the game'
+  }
 
   return (
     <View style={styles.container}>
       <Header title={title}/>
       {content}
+      <Footer onInstructions={onInstructions} footerText={footerText}/>
       <StatusBar style="auto" />
     </View>
   );

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, NumberContainer } from '../../components';
 import colors from '../../constants/colors';
 import { styles } from './styles';
-import Congrats from '../congrats/Congrats';
+import {Congrats} from '../index';
 
 const generateRandomNumber = (min, max, exclude) => {
   min=Math.ceil(min);
@@ -25,14 +25,14 @@ const Game = ({selectedNumber, onResetGame}) => {
   
   const onLower = () => {
     attempts++
-    const newRandom = generateRandomNumber(min, currentGuess, currentGuess)
+    const newRandom = generateRandomNumber(min, currentGuess, null)
     if (newRandom < selectedNumber){ setMin(newRandom) }
     setCurrentGuess(newRandom)
   }
 
   const onGreater = () => {
     attempts++
-    const newRandom = generateRandomNumber(currentGuess, max, currentGuess)
+    const newRandom = generateRandomNumber(currentGuess, max, null)
     if (newRandom > selectedNumber) {setMax(newRandom)}
     setCurrentGuess(newRandom)
   }
