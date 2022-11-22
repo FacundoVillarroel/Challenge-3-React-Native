@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, NumberContainer } from '../../components';
 import colors from '../../constants/colors';
 import { styles } from './styles';
-import {Congrats} from '../index';
+import Congrats from '../congrats/Congrats';
 
 const generateRandomNumber = (min, max, exclude) => {
   min=Math.ceil(min);

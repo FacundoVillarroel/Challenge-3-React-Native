@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
         color: colors.text,
         paddingVertical: 5,
         textAlign: 'center',
+        fontFamily:"JosefinSans-Regular"
     },
     inputContainer: {
         width:"70%",
@@ -46,6 +47,8 @@ export const styles = StyleSheet.create({
         marginVertical: 20,
     },
     confirmedTitle: {
-        fontSize: 16
+        fontSize: 16,
+        color:colors.text,
+        fontFamily:"JosefinSans-Regular"
     },
 })

@@ -12,6 +12,6 @@ export const styles = StyleSheet.create({
   title:{
     fontSize:22,
     color:colors.text,
-    fontFamily:"JosefinSans-Regular"
+    fontFamily:"JosefinSans-Bold"
   }
 })

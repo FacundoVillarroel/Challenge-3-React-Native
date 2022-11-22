@@ -16,6 +16,8 @@ export const styles = StyleSheet.create({
     padding:10,
   },
   text:{
-    alignItems:"center"
+    alignItems:"center",
+    fontFamily:"JosefinSans-Bold",
+    color:colors.secondary
   },
 })
