@@ -20,6 +20,7 @@ let attempts = 0
 
 const Game = ({selectedNumber, onResetGame}) => {
   const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1,100, selectedNumber));
+  const [gameOver, setGameOver] = useState(null)
   const [min, setMin] = useState(1);
   const [max, setMax] = useState(100);
   
@@ -43,6 +44,12 @@ const Game = ({selectedNumber, onResetGame}) => {
   }
 
   if(selectedNumber === currentGuess) {
+    setTimeout(() => {
+      setGameOver(true)
+    }, 500);
+  }
+
+  if(gameOver){
     return <Congrats attempts={attempts} handleRestart={handleRestart} currentGuess={currentGuess}/>
   }
 

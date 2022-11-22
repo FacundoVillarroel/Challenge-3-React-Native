@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
   instructionNumber:{
     fontSize:15,
     color:colors.text,
-    marginTop:10
+    marginTop:10,
+    marginLeft:10
   },
 })
